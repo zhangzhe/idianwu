@@ -24,7 +24,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <td><%= simple_format item.description %></td>
+        <td><%= raw g_textile(item.description) %></td>
         <td>
           <%= link_to '修改', edit_item_path(item), :class => 'btn btn-primary' %>
           <%= link_to '删除', item_path(item), :method => :delete, :confirm => '确定?', :class => 'btn  btn-danger' %>

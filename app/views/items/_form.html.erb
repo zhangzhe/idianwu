@@ -1,15 +1,16 @@
 <%= form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
+    <div class="span6">
       <%= f.text_field :name, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
+    <div class="span6">
       <script>edToolbar('mytxtarea'); </script>
-      <%= f.text_area :description, :id => "mytxtarea", :class => 'text_area', :rows => "10" %>
+      <%= f.text_area :description, :id => "mytxtarea", :class => 'field span7', :rows => "30" %>
+					
     </div>
   </div>
 

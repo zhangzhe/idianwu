@@ -14,10 +14,6 @@ function edToolbar(obj) {
 	document.write("<img class=\"button\" src=\"/assets/editor_buttons/underline.png\" name=\"btnUnderline\" title=\"Underline\" onClick=\"doAddTags('+','+','" + obj + "')\">");
 	document.write("<img class=\"button\" src=\"/assets/editor_buttons/h1.png\" name=\"btnHead\" title=\"Head1\" onClick=\"doAddTags('[h]','[/h]','" + obj + "')\">");
 	document.write("<img class=\"button\" src=\"/assets/editor_buttons/ordered.png\" name=\"btnList\" title=\"Unordered List\" onClick=\"doList('<ul>','</ul>','" + obj + "')\">");
-  	document.write("<img class=\"button\" src=\"/assets/editor_buttons/code.png\" name=\"btnCode\" title=\"Code\" onClick=\"doAddTags('[code:ruby]','[/code]','" + obj + "')\">");
-  	//color here?
-	//document.write("<img class=\"button\" src=\"editor/images/code.png\" name=\"btnCode\" title=\"Code\" onClick=\"doAddTags('[code:ruby]','[/code]','" + obj + "')\">");	
-	
 	document.write("<img class=\"button\" src=\"/assets/editor_buttons/link.png\" name=\"btnLink\" title=\"Insert Link\" onClick=\"doAddTags('[link: link_description]','[/link]','" + obj + "')\">");
 	document.write("<img class=\"button\" src=\"/assets/editor_buttons/image.png\" name=\"btnPicture\" title=\"Insert Picture\" onClick=\"doAddTags('[img]','[/img]','" + obj + "')\">");
 	document.write("<br>");	
