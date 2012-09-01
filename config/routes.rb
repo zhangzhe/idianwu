@@ -1,5 +1,7 @@
 Idianwu::Application.routes.draw do
-  resources :items
+  resources :items do
+    resources :images
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

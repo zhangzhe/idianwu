@@ -1,0 +1,19 @@
+<% @images.each do |image| %>
+	<% if image.image? %>	
+  <%= link_to_function image_tag(image.image_url(:thumb)), "alert('[img]#{image.image_url}[/img]')" %>
+	
+	<%= link_to "Delete", item_image_path(:id => image), :method => :delete, :confirm => '确定?', :class => 'btn  btn-danger' %>
+	<% end %>
+<% end %>
+
+<%= form_for [@item, @image], :html => {:multipart => true} do |f| %>
+  <%= f.hidden_field :item_id %>
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

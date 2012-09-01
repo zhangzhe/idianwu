@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item = Item.create
   end
 
   def edit

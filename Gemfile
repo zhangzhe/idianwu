@@ -31,7 +31,8 @@ end
 gem 'debugger'
 gem 'bootstrap-will_paginate'
 
-
+gem "rmagick"
+gem "carrierwave"
 
 
 # To use ActiveModel has_secure_password

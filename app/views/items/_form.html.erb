@@ -5,6 +5,12 @@
       <%= f.text_field :name, :class => 'text_field' %>
     </div>
   </div>
+	
+  <div class="control-group">
+    <%= link_to "choose image", item_images_path(:item_id => @item), :class => 'control-label btn btn-success', :target => "_blank" %>
+  </div>
+	
+	
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="span6">
