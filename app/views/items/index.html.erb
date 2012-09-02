@@ -1,40 +1,20 @@
-<%- model_class = Item -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<div class="dl-horizontal">
+	<dd>
+		<%= form_tag items_path, :method => 'get', :class => "form-search" do %>
+		<div class="input-append">
+			<%= search_field_tag :search, params[:search], :class => "span4", :placeholder => '请输入宝贝信息' %>
+			<%= submit_tag "搜索", :name => nil, :class => "btn" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '新建宝贝', new_item_path, :class => 'btn' %>
+		</div>
+		<% end %>
+	</dd>
 </div>
 
+<hr>
 
-<%= form_tag items_path, :method => 'get', :class => "form-search" do %>
-<div class="input-append">
-	<%= search_field_tag :search, params[:search], :size => 16, :placeholder => '请输入宝贝名称' %>
-	<%= submit_tag "搜索", :name => nil, :class => "btn" %>
-</div>
+<% @items.each do |item| %>
+  <% @item = item %>
+  <%= render 'item' %>
 <% end %>
-
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>名称</th>
-      <th>描述</th>
-      <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操&nbsp;作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= raw g_textile(item.description) %></td>
-        <td>
-          <%= link_to '修改', edit_item_path(item), :class => 'btn btn-primary' %>
-          <%= link_to '删除', item_path(item), :method => :delete, :confirm => '确定?', :class => 'btn  btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to '新建宝贝', new_item_path, :class => 'btn' %>
 
 <%= will_paginate @items %>
 

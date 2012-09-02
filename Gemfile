@@ -27,7 +27,6 @@ gem 'twitter-bootstrap-rails'
 group :development do
   gem 'faker'
 end
-
 gem 'debugger'
 gem 'bootstrap-will_paginate'
 
